@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package acme.unrelated.v1;
+
+// Sibling proto in the same buf module as `acme.greeter.v1`. Nothing imports
+// it; nothing it imports. Demonstrates that codegen for the greeter target
+// doesn't drag this file into the sandbox.
+message UnrelatedThing {
+  string id = 1;
+}
