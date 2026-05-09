@@ -1,8 +1,8 @@
 version: v2
 plugins:
   - remote: buf.build/protocolbuffers/python
-    out: .
+    out: gen
   - remote: buf.build/protocolbuffers/pyi
-    out: .
+    out: gen
   - remote: buf.build/connectrpc/python
-    out: .
+    out: gen

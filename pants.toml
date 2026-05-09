@@ -6,7 +6,7 @@ backend_packages = [
 ]
 
 [source]
-root_patterns = ["/"]
+root_patterns = ["/", "/gen"]
 
 [python]
 interpreter_constraints = ["CPython>=3.10,<4"]
