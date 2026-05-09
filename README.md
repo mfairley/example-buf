@@ -23,10 +23,10 @@ parent-dir/
 
 # Confirm runtime-dep inference picks up connectrpc + protobuf from the
 # `_connect` and `_pb2` imports (driven by the plugins in buf.gen.yaml).
-./pants_from_sources dependencies --transitive company/server/server.py
+./pants_from_sources dependencies --transitive acme/server/server.py
 
 # Start the server (binds 0.0.0.0:8000).
-./pants_from_sources run company/server:server-bin
+./pants_from_sources run acme/server:server-bin
 ```
 
 In another shell, hit the endpoint:
@@ -41,5 +41,5 @@ curl --header "Content-Type: application/json" \
 Or run the matching async client:
 
 ```bash
-./pants_from_sources run company/client:client-bin
+./pants_from_sources run acme/client:client-bin
 ```

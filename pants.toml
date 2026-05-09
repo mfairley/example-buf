@@ -7,8 +7,8 @@ backend_packages = [
 
 [source]
 root_patterns = [
-  "/company",
-  "/company/proto/gen",
+  "/acme",
+  "/acme/proto/gen",
   "/3rdparty",
 ]
 

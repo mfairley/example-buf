@@ -1,8 +1,8 @@
 version: v2
 modules:
-  - path: company/proto
+  - path: acme/proto
     excludes:
-      - company/proto/gen
+      - acme/proto/gen
 lint:
   use:
     - DEFAULT
