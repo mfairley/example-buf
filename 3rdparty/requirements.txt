@@ -1,0 +1,3 @@
+connectrpc
+protobuf
+uvicorn

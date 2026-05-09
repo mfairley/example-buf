@@ -1,0 +1,11 @@
+version: v2
+modules:
+  - path: company/proto
+    excludes:
+      - company/proto/gen
+lint:
+  use:
+    - DEFAULT
+breaking:
+  use:
+    - FILE

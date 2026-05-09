@@ -1,0 +1,24 @@
+[GLOBAL]
+pants_version = "2.33.0.dev0"
+backend_packages = [
+  "pants.backend.python",
+  "pants.backend.codegen.protobuf.python",
+]
+
+[source]
+root_patterns = [
+  "/company",
+  "/company/proto/gen",
+  "/3rdparty",
+]
+
+[python]
+interpreter_constraints = ["CPython>=3.10,<4"]
+enable_resolves = true
+default_resolve = "python-default"
+
+[python.resolves]
+python-default = "3rdparty/python-default.lock"
+
+[anonymous-telemetry]
+enabled = false
