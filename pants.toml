@@ -6,11 +6,7 @@ backend_packages = [
 ]
 
 [source]
-root_patterns = [
-  "/acme",
-  "/acme/proto/gen",
-  "/3rdparty",
-]
+root_patterns = ["/"]
 
 [python]
 interpreter_constraints = ["CPython>=3.10,<4"]

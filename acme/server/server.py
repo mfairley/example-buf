@@ -1,5 +1,8 @@
-from services.greeter.greeter_connect import GreeterService, GreeterServiceASGIApplication
-from services.greeter.greeter_pb2 import GreetResponse
+from acme.proto.services.greeter.greeter_connect import (
+    GreeterService,
+    GreeterServiceASGIApplication,
+)
+from acme.proto.services.greeter.greeter_pb2 import GreetResponse
 
 
 class Greeter(GreeterService):
