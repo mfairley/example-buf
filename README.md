@@ -18,8 +18,8 @@ parent-dir/
 ## What to run
 
 ```bash
-# Resolve buf.yaml deps and the Python lock in one go.
-./pants_from_sources generate-lockfiles
+# Resolve buf.yaml deps into buf.lock.
+./pants_from_sources generate-lockfiles --resolve=buf
 
 # Generate _pb2 / _pb2.pyi / _connect via buf (also pulls buf.validate from BSR).
 ./pants_from_sources export-codegen ::
@@ -57,18 +57,14 @@ Or run the matching async client:
 ./pants_from_sources run acme/client:client-bin
 ```
 
-## Lockfile management
+## `buf.lock`
 
-Two lockfiles are managed by Pants:
-
-- `3rdparty/python-default.lock` — Python wheels for the `python-default` resolve.
-- `buf.lock` — pinned BSR commits for the deps declared in `buf.yaml`. The resolve
-  name is `buf` (named after the directory containing `buf.yaml` — repo root here).
-
-Regenerate either or both:
+Pants's `generate-lockfiles` goal also resolves `buf.yaml` deps. The resolve is
+named after the directory containing the `buf.yaml` (`buf` for repo-root):
 
 ```bash
-./pants_from_sources generate-lockfiles                       # both
-./pants_from_sources generate-lockfiles --resolve=buf         # buf.lock only
-./pants_from_sources generate-lockfiles --resolve=python-default  # Python only
+./pants_from_sources generate-lockfiles --resolve=buf
 ```
+
+Bare `generate-lockfiles` (no `--resolve`) regenerates everything Pants knows
+about, including `buf.lock`.
