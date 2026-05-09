@@ -1,5 +1,5 @@
 python_sources(
-    sources=["server.py"],
+    sources=["*.py", "!test_*.py"],
 )
 
 python_tests(

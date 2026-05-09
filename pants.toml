@@ -9,6 +9,9 @@ backend_packages = [
 [source]
 root_patterns = ["/", "/gen"]
 
+[python-repos]
+indexes = ["https://pypi.org/simple/", "https://buf.build/gen/python"]
+
 [python]
 interpreter_constraints = ["CPython>=3.10,<4"]
 enable_resolves = true

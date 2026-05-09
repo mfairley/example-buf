@@ -1,3 +1,4 @@
+bufbuild-protovalidate-protocolbuffers-python==34.1.0.1.20260415201107+50325440f8f2
 connectrpc
 protobuf
 protovalidate
