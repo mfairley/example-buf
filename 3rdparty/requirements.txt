@@ -1,3 +1,4 @@
 connectrpc
 protobuf
+protovalidate
 uvicorn
