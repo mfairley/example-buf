@@ -1,0 +1,8 @@
+version: v2
+plugins:
+  # Message types (`*_pb.ts`).
+  - local: protoc-gen-es
+    out: gen-ts
+    opt:
+      - target=ts
+      - import_extension=js

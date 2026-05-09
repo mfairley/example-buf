@@ -68,3 +68,34 @@ named after the directory containing the `buf.yaml` (`buf` for repo-root):
 
 Bare `generate-lockfiles` (no `--resolve`) regenerates everything Pants knows
 about, including `buf.lock`.
+
+## TypeScript client (without Pants)
+
+A TypeScript client of the same `GreeterService`, generated via plain `npm`
++ `buf` (Pants is not involved):
+
+```bash
+cd clients/typescript
+npm install
+npm run buf:generate   # writes gen-ts/acme/greeter/v1/greeter_pb.ts
+npm start              # runs src/main.ts against the running server
+```
+
+Layout:
+
+- `buf.gen.ts.yaml` (repo root) — separate buf template that runs only the
+  `protoc-gen-es` plugin. Keeping TS codegen in its own template means
+  Pants's `export-codegen` (which uses `buf.gen.yaml`) and the npm-driven
+  TS codegen don't trip over each other.
+- `clients/typescript/package.json` — npm deps for the TS client. Located
+  under `clients/typescript/`, not `idl/acme/`. The IDL is a shared
+  semantic namespace; `clients/typescript/` is a deployable, which is the
+  natural unit for `package.json`.
+- `gen-ts/acme/greeter/v1/greeter_pb.ts` — generated bindings, gitignored.
+- `clients/typescript/tsconfig.json` — sets a `paths` alias
+  `"@acme/*" → "../../gen-ts/acme/*"` so app code can write
+  `from "@acme/greeter/v1/greeter_pb.js"` instead of brittle relative
+  paths through `gen-ts/`.
+
+The Python and TS sides share the same `idl/`, the same `buf.yaml`, and the
+same `buf.lock` — both are reproducible against the same BSR commit pins.
