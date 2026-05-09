@@ -1,11 +1,7 @@
+import { GreeterService, GreetRequestSchema } from "@acme/proto/gen/greeter/v1/greeter_pb.js";
 import { create } from "@bufbuild/protobuf";
 import { createClient } from "@connectrpc/connect";
 import { createConnectTransport } from "@connectrpc/connect-node";
-
-import {
-  GreeterService,
-  GreetRequestSchema,
-} from "@acme/greeter/v1/greeter_pb.js";
 
 const transport = createConnectTransport({
   baseUrl: "http://localhost:8000",

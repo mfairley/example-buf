@@ -1,0 +1,13 @@
+{
+  "name": "@acme/proto",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./gen/*.js": "./gen/acme/*.ts"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.7.0",
+    "@connectrpc/connect": "^2.0.2"
+  }
+}

@@ -8,7 +8,7 @@ dist/
 gen/
 
 # TypeScript-side: generated bindings + node_modules.
-gen-ts/
+idl/gen/
 node_modules/
 
 # Python

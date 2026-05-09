@@ -1,0 +1,3 @@
+packages:
+  - "idl"
+  - "clients/typescript"

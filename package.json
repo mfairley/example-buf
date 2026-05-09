@@ -1,0 +1,16 @@
+{
+  "name": "example-buf",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "idl",
+    "clients/typescript"
+  ],
+  "scripts": {
+    "buf:generate": "buf generate --template buf.gen.ts.yaml"
+  },
+  "devDependencies": {
+    "@bufbuild/buf": "^1.69.0",
+    "@bufbuild/protoc-gen-es": "^2.7.0"
+  }
+}
