@@ -5,12 +5,5 @@
   "workspaces": [
     "idl",
     "acme/clients/typescript"
-  ],
-  "scripts": {
-    "buf:generate": "buf generate --template buf.gen.ts.yaml"
-  },
-  "devDependencies": {
-    "@bufbuild/buf": "^1.69.0",
-    "@bufbuild/protoc-gen-es": "^2.7.0"
-  }
+  ]
 }
