@@ -29,29 +29,48 @@ Per <https://www.pantsbuild.org/prerelease/docs/contributions/development/runnin
 this repo expects a clone of `pants` as a sibling directory:
 
 ```
-/workspaces/
+parent-dir/
   pants/         # https://github.com/pantsbuild/pants checkout
   example-buf/   # this repo
 ```
 
-Invoke Pants from source via:
+Invoke Pants via the bundled `./pants_from_sources` wrapper (it auto-derives
+`PANTS_VERSION` from the sibling source tree, disables pantsd, and adds
+`--no-verify-config`):
 
 ```bash
-cd /workspaces/example-buf
-PANTS_SOURCE=/workspaces/pants /workspaces/pants/pants <goal> <args>
+cd example-buf
+./pants_from_sources <goal> <args>
 ```
+
+Override the source path with `PANTS_SOURCE=/some/other/pants ./pants_from_sources …`.
 
 Examples:
 
 ```bash
 # List all targets.
-PANTS_SOURCE=/workspaces/pants /workspaces/pants/pants list ::
+./pants_from_sources list ::
 
-# Inferred runtime deps for the server (should pull in connectrpc + protobuf).
-PANTS_SOURCE=/workspaces/pants /workspaces/pants/pants dependencies --transitive company/server/server.py
+# Inferred runtime deps for the server (pulls in connectrpc, protobuf, uvicorn).
+./pants_from_sources dependencies --transitive company/server/server.py
 
 # Generate the connectrpc + protocolbuffers Python sources via buf.
-PANTS_SOURCE=/workspaces/pants /workspaces/pants/pants export-codegen ::
+./pants_from_sources export-codegen ::
+
+# Run the ASGI server on http://0.0.0.0:8000.
+./pants_from_sources run company/server:server-bin
+
+# Run the async client (in another shell, after the server is up).
+./pants_from_sources run company/client:client-bin
+```
+
+A quick curl while the server is running:
+
+```bash
+curl --header "Content-Type: application/json" \
+     --data '{"name": "Jane"}' \
+     http://localhost:8000/services.greeter.GreeterService/Greet
+# {"greeting":"Hello, Jane!"}
 ```
 
 ## Testing
