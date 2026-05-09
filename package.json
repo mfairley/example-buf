@@ -1,9 +1,5 @@
 {
   "name": "@acme/root",
   "version": "0.1.0",
-  "private": true,
-  "workspaces": [
-    "idl",
-    "acme/**"
-  ]
+  "private": true
 }
