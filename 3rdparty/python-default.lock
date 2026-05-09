@@ -9,7 +9,6 @@
 //     "CPython<4,>=3.10"
 //   ],
 //   "generated_with_requirements": [
-//     "bufbuild-protovalidate-protocolbuffers-python==34.1.0.1.20260415201107+50325440f8f2",
 //     "connectrpc",
 //     "protobuf",
 //     "protovalidate",
@@ -41,38 +40,6 @@
   "locked_resolves": [
     {
       "locked_requirements": [
-        {
-          "artifacts": [
-            {
-              "algorithm": "sha256",
-              "hash": "cb5fa596429431b1ee6b01bd8a4eb0767037277778b2506f5ddec1895180f374",
-              "url": "https://buf.build/gen/python/bufbuild-protovalidate-protocolbuffers-pyi/bufbuild_protovalidate_protocolbuffers_pyi-34.1.0.1.20260415201107%2B50325440f8f2-py3-none-any.whl"
-            }
-          ],
-          "project_name": "bufbuild-protovalidate-protocolbuffers-pyi",
-          "requires_dists": [
-            "protobuf>=3.20",
-            "types-protobuf"
-          ],
-          "requires_python": ">=3.10",
-          "version": "34.1.0.1.20260415201107+50325440f8f2"
-        },
-        {
-          "artifacts": [
-            {
-              "algorithm": "sha256",
-              "hash": "994108faaf6cc986654ed350cc4e5b48a6ac8f6d50a8e823f9b2efa1909e0da5",
-              "url": "https://buf.build/gen/python/bufbuild-protovalidate-protocolbuffers-python/bufbuild_protovalidate_protocolbuffers_python-34.1.0.1.20260415201107%2B50325440f8f2-py3-none-any.whl"
-            }
-          ],
-          "project_name": "bufbuild-protovalidate-protocolbuffers-python",
-          "requires_dists": [
-            "bufbuild-protovalidate-protocolbuffers-pyi>=34.1.0.1.20260415201107",
-            "protobuf>=3.20"
-          ],
-          "requires_python": ">=3.10",
-          "version": "34.1.0.1.20260415201107+50325440f8f2"
-        },
         {
           "artifacts": [
             {
@@ -1331,24 +1298,6 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "a5d647381f8651bd505304ed1148b8a7b342781796e0f80e0284c774c2262a09",
-              "url": "https://files.pythonhosted.org/packages/9e/61/c94036a4690e18059e55451ba5ce6294ea790651a0f5a429ad961e6b9675/types_protobuf-7.34.1.20260508-py3-none-any.whl"
-            },
-            {
-              "algorithm": "sha256",
-              "hash": "1c93e8c294281b76a5255fc21c747db0004694463ac6ea9866ee06da969fa555",
-              "url": "https://files.pythonhosted.org/packages/05/1b/4ae76c732caa3ff5786ac9039d592d526ff2db898da93176c40b63e0b110/types_protobuf-7.34.1.20260508.tar.gz"
-            }
-          ],
-          "project_name": "types-protobuf",
-          "requires_dists": [],
-          "requires_python": ">=3.10",
-          "version": "7.34.1.20260508"
-        },
-        {
-          "artifacts": [
-            {
-              "algorithm": "sha256",
               "hash": "f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548",
               "url": "https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl"
             },
@@ -1460,7 +1409,6 @@
   "pip_version": "24.2",
   "prefer_older_binary": false,
   "requirements": [
-    "bufbuild-protovalidate-protocolbuffers-python==34.1.0.1.20260415201107+50325440f8f2",
     "connectrpc",
     "protobuf",
     "protovalidate",
