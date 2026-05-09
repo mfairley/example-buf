@@ -4,7 +4,7 @@
   "private": true,
   "workspaces": [
     "idl",
-    "clients/typescript"
+    "acme/clients/typescript"
   ],
   "scripts": {
     "buf:generate": "buf generate --template buf.gen.ts.yaml"

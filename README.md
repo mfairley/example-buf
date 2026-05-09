@@ -60,6 +60,6 @@ Or run the matching async client:
 ## TypeScript client
 
 A TypeScript ConnectRPC client (npm/pnpm/bun workspaces, no Pants involved)
-is scaffolded under `clients/typescript/` against the same `idl/` protos.
-Not central to what this repo demonstrates — it's here to round out the
-multi-language story for Pants reviewers.
+is scaffolded under `acme/clients/typescript/` against the same `idl/`
+protos. Not central to what this repo demonstrates — it's here to round
+out the multi-language story for Pants reviewers.
