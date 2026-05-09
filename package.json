@@ -4,6 +4,6 @@
   "private": true,
   "workspaces": [
     "idl",
-    "acme/clients/typescript"
+    "acme/**"
   ]
 }
