@@ -3,6 +3,7 @@ pants_version = "2.33.0.dev0"
 backend_packages = [
   "pants.backend.python",
   "pants.backend.codegen.protobuf.python",
+  "pants.backend.codegen.protobuf.lint.buf",
 ]
 
 [source]
