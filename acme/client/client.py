@@ -1,7 +1,7 @@
 import asyncio
 
-from services.greeter.greeter_connect import GreeterServiceClient
-from services.greeter.greeter_pb2 import GreetRequest
+from acme.greeter.v1.greeter_connect import GreeterServiceClient
+from acme.greeter.v1.greeter_pb2 import GreetRequest
 
 
 async def main() -> None:

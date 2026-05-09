@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package services.greeter;
+package acme.greeter.v1;
 
 message GreetRequest {
   string name = 1;
