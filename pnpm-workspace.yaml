@@ -1,3 +1,6 @@
 packages:
   - "idl"
   - "acme/clients/typescript"
+allowBuilds:
+  '@bufbuild/buf': true
+  esbuild: true

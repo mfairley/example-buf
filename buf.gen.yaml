@@ -1,5 +1,6 @@
 version: v2
 plugins:
+  # --- Python (consumed by Pants codegen) ---
   - remote: buf.build/protocolbuffers/python
     out: gen
     include_imports: true
@@ -8,3 +9,14 @@ plugins:
     include_imports: true
   - remote: buf.build/connectrpc/python
     out: gen
+  # --- TypeScript (consumed by `pnpm --filter @acme/proto buf:generate`) ---
+  # `bufbuild/es` isn't in Pants's DEFAULT_PLUGIN_PINS registry, so we pin
+  # version+revision explicitly here. Output lands inside the `@acme/proto`
+  # workspace package's `gen/` directory.
+  - remote: buf.build/bufbuild/es:v2.12.0
+    revision: 1
+    out: idl/gen
+    include_imports: true
+    opt:
+      - target=ts
+      - import_extension=js

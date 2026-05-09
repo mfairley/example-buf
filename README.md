@@ -54,7 +54,7 @@ curl --header "Content-Type: application/json" \
 Or run the matching async client:
 
 ```bash
-./pants_from_sources run acme/client:client-bin
+./pants_from_sources run acme/clients/python:client-bin
 ```
 
 ## TypeScript client
